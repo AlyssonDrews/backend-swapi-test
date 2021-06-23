@@ -40,7 +40,7 @@ Uma API REST desenvolvida para conter dados de planetas do universo Star Wars. A
   O projeto tem as seguintes Endpoints e seus respectivos Curls:
   
   #### Criar um novo planeta
-  * POST /api/createPlanet
+  * POST /api/create
   
   ````
   curl --location --request POST 'http://localhost:3000/api/create/' \
