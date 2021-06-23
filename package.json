@@ -1,0 +1,26 @@
+{
+  "name": "backend-swapi-test",
+  "version": "1.0.0",
+  "description": "teste técnico para a vaga de backend developer na b2w",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlyssonDrews/backend-swapi-test.git"
+  },
+  "author": "alysson_drews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlyssonDrews/backend-swapi-test/issues"
+  },
+  "homepage": "https://github.com/AlyssonDrews/backend-swapi-test#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "jest": "^27.0.4",
+    "mongoose": "^5.12.14",
+    "swapi-node": "^0.6.0"
+  }
+}
