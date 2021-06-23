@@ -6,7 +6,9 @@ class App {
     start(){
         
         var url = "mongodb://localhost:27017/planets";
-        mongoose.connect(url).then(() => {
+        mongoose.connect(url, {
+            useUnifiedTopology: false,
+        }).then(() => {
             console.log('Banco de dados conectado!');
         }).catch(err => {
             console.log(`Erro ao se conectar: ${err.message}`);
