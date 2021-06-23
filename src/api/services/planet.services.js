@@ -11,12 +11,20 @@ class PlanetService {
     }
 
     async createPlanet(name, climate, terrain, response){
+        
         const searchPlanetApi = await this.swapiService.getPlanet(name)
         const planetAperances = searchPlanetApi.results[0].films.length
-        const planetModel = new Planet({nome: name, clima: climate, terreno: terrain, aparicoesFilme: planetAperances })
-        this.planetRepository.createPlanet(planetModel, response)
+        const checkIfExsit = await this.planetRepository.getPlanetByName(name)
         
-        return planetModel
+        if (checkIfExsit.length >= 1) {
+            return false
+        } else {
+            const planetModel = new Planet({nome: name, clima: climate, terreno: terrain, aparicoesFilme: planetAperances })
+            this.planetRepository.createPlanet(planetModel, response)
+
+            return planetModel
+        }
+        
     }
 
     async getAllPlanets(){

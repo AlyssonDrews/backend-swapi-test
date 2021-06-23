@@ -16,7 +16,7 @@ class PlanetRouter {
             })
         })
 
-        this.router.post('/create', this.PlanetController.create.bind(this.PlanetController))
+        this.router.post('/create', this.PlanetController.createPlanet.bind(this.PlanetController))
 
         this.router.get('/planets', this.PlanetController.getAllPlanets.bind(this.PlanetController))
         this.router.get('/planet/name/:name', this.PlanetController.getPlanetByName.bind(this.PlanetController))
