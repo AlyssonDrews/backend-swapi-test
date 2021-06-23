@@ -5,15 +5,15 @@ class PlanetController {
         this.planetService = new PlanetService()
     }
     
-    async create(req, res) {
+    async createPlanet(req, res) {
         const { nome, clima, terreno} = req.body
         
-        //TO DO: tratamento de erro quando não é enviado todos os parametros
+       
         const response = await this.planetService.createPlanet(nome, clima, terreno, res)
         if(response){
             return res.status(201).json({message: "Planeta criado com sucesso!", response: response})
         } else {
-            return res.status(400).json({message: "Planeta já se encontra na base de dados..."})
+            return res.status(400).json({message: "Erro ao adicionar o planeta"})
         }
 
     }
